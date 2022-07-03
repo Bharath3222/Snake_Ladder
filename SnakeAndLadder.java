@@ -9,20 +9,21 @@ public class SnakeAndLadder {
 		// uc1
 		int player = 1;
 		int startPosition = 0;
+		int dieCount=0;
 		
-		//uc2
+
 		Random random = new Random();
 		while(startPosition<100) {
 		int dieRoll = random.nextInt(7);
+		dieCount++;
 		if(dieRoll==0)
 			dieRoll=1;
 		else
 			dieRoll=dieRoll;
-		System.out.println("Rolled Die number is :"+ dieRoll);
+		//System.out.println("Rolled Die number is :"+ dieRoll);
 		
-	//uc3
 		int options = random.nextInt(3);
-		System.out.println("choosing option is :"+ options);
+		//System.out.println("choosing option is :"+ options);
 		final int noPlay = 0;
 		final int ladder = 1;
 		final int snake = 2;
@@ -44,7 +45,7 @@ public class SnakeAndLadder {
 			}
 			}
 		}
-		System.out.println("Winning postion reached - "+startPosition);
+		System.out.println(dieCount+" times die rolled to reach winning position number at "+startPosition);
 	
 	}
 	}
