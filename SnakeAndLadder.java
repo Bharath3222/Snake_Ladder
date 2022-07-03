@@ -18,6 +18,26 @@ public class SnakeAndLadder {
 		else
 			dieRoll=dieRoll;
 		System.out.println("Rolled Die number is :"+ dieRoll);
+		
+	//uc3
+		int options = random.nextInt(3);
+		System.out.println("choosing option is :"+ options);
+		final int noPlay = 0;
+		final int ladder = 1;
+		final int snake = 2;
+		switch (options) {
+		case noPlay:
+			startPosition = startPosition;
+			break;
+		case ladder:
+				startPosition += dieRoll;
+				break;
+		case snake:
+		 startPosition -= dieRoll;
+				break;
+			}
+		System.out.println("now Player postion at point : "+startPosition);
+	
 	}
 	}
 
