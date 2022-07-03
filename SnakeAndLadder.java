@@ -12,6 +12,7 @@ public class SnakeAndLadder {
 		
 		//uc2
 		Random random = new Random();
+		while(startPosition<100) {
 		int dieRoll = random.nextInt(7);
 		if(dieRoll==0)
 			dieRoll=1;
@@ -30,13 +31,20 @@ public class SnakeAndLadder {
 			startPosition = startPosition;
 			break;
 		case ladder:
+			int position1 = dieRoll + startPosition;
+			if (position1 < 101) {
 				startPosition += dieRoll;
 				break;
+			}
 		case snake:
-		 startPosition -= dieRoll;
+			int position2 = startPosition - dieRoll;
+			if (position2 < 0) {
+				startPosition = 0;
 				break;
 			}
-		System.out.println("now Player postion at point : "+startPosition);
+			}
+		}
+		System.out.println("Winning postion reached - "+startPosition);
 	
 	}
 	}
